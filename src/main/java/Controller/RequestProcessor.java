@@ -34,7 +34,7 @@ public class RequestProcessor {
         else if(command.startsWith("exit")){
             return "buy buy Client!";
         }
-        return null;
+        else return "invalid input";
     }
 
 }
