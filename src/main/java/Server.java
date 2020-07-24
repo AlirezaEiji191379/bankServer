@@ -37,12 +37,12 @@ static class ClientHandler extends Thread{
        String toBeSend="";
        while (true) {
            try {
-               received = dataInputStream.readUTF();
-               System.out.println("from client: " + received);
-               toBeSend = RequestProcessor.getInstance().process(received);
-               dataOutputStream.writeUTF(toBeSend);
-               dataOutputStream.flush();
-               System.out.println("from server: " + toBeSend);
+                   received = dataInputStream.readUTF();
+                   System.out.println("from client: " + received);
+                   toBeSend = RequestProcessor.getInstance().process(received);
+                   dataOutputStream.writeUTF(toBeSend);
+                   dataOutputStream.flush();
+                   System.out.println("from server: " + toBeSend);
                if(received.equals("exit")){
                    dataOutputStream.close();
                    dataInputStream.close();
